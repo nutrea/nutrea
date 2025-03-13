@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(120deg, #2ecc71, #27ae60);
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Animation du logo */
+.logo {
+    font-size: 50px;
+    font-weight: 600;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+/* Animation du slogan */
+.slogan {
+    font-size: 20px;
+    font-style: italic;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 2s ease-in-out 0.5s forwards;
+}
+
+/* Section hero */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.content {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1.5s ease-in-out 1s forwards;
+}
+
+h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.cta {
+    display: inline-block;
+    padding: 12px 30px;
+    margin-top: 20px;
+    font-size: 18px;
+    color: white;
+    background: #16a085;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+/* Effet d'onde sur le bouton */
+.cta::before {
+    content: "";
+    position: absolute;
+    width: 300%;
+    height: 300%;
+    top: 50%;
+    left: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+.cta:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.cta:hover {
+    background: #1abc9c;
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
